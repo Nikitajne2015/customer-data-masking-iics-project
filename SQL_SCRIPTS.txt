@@ -1,0 +1,29 @@
+-- Create Source Table
+
+CREATE TABLE CUSTOMER_SRC (
+    CUSTOMER_ID NUMBER,
+    CUSTOMER_NAME VARCHAR2(100),
+    EMAIL VARCHAR2(100),
+    CITY VARCHAR2(50)
+);
+
+-- Insert Sample Data into Source
+
+INSERT INTO CUSTOMER_SRC VALUES (101, 'Amit Sharma', 'amit@gmail.com', 'Pune');
+INSERT INTO CUSTOMER_SRC VALUES (102, 'Rahul Verma', 'rahul@gmail.com', 'Mumbai');
+INSERT INTO CUSTOMER_SRC VALUES (103, 'Sneha Patel', 'sneha@gmail.com', 'Delhi');
+
+-- Create Target Table
+
+CREATE TABLE CUSTOMER_MASKED (
+    CUSTOMER_ID NUMBER,
+    CUSTOMER_NAME VARCHAR2(100),
+    EMAIL VARCHAR2(100),
+    CITY VARCHAR2(50)
+);
+
+-- Sample Masking Logic (Conceptual)
+
+-- CUSTOMER_NAME → Substitution Masking
+-- EMAIL → Partial Masking
+-- CITY → Substitution Masking
