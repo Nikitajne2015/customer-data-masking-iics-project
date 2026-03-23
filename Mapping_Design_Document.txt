@@ -1,0 +1,20 @@
+# Customer Data Masking ETL Mapping
+
+## Tool Used
+Informatica Intelligent Cloud Services (IICS)
+
+## Source
+Oracle Customer Table
+
+## Target
+Masked Customer Table
+
+## Transformations Used
+- Data Masking Transformation
+- Substitution Masking
+
+## Business Requirement
+Mask customer sensitive data before loading into non-production environment.
+
+## Mapping Flow
+Source → Data Masking → Target
