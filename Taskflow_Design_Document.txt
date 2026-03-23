@@ -1,0 +1,48 @@
+# Taskflow Design Document
+
+## Tool Used
+Informatica Intelligent Cloud Services (IICS)
+
+## Taskflow Name
+Customer_Data_Masking_Taskflow
+
+## Description
+This taskflow executes the customer data masking mapping to mask sensitive customer information before loading into the target system.
+
+## Execution Flow
+
+Start → Mapping Task → Success → End
+
+## Steps Included
+
+### Step 1: Start Task
+Initiates the taskflow execution.
+
+### Step 2: Mapping Task
+Executes the mapping "Customer_Data_Masking_Mapping".
+
+Transformation Used:
+- Data Masking Transformation
+- Substitution Masking
+
+Columns Masked:
+- CUSTOMER_NAME
+- CITY
+- EMAIL (Partial Masking)
+
+### Step 3: Success Path
+If mapping completes successfully, taskflow moves to end.
+
+### Step 4: Failure Handling
+If mapping fails:
+- Log error message
+- Send failure notification (conceptual)
+
+## Scheduling
+Taskflow can be scheduled to run daily or on-demand.
+
+## Logging and Monitoring
+Execution logs are monitored using IICS My Jobs page.
+
+## Business Requirement
+Ensure sensitive customer data is masked before loading into non-production environments to support GDPR compliance.
